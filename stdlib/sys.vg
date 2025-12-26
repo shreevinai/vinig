@@ -1,0 +1,13 @@
+module sys
+
+function exit(code: i32):
+    syscall(60, code)  # Linux x86_64 exit
+
+function write(fd: i32, msg: string):
+    syscall(1, fd, msg, length(msg))  # write syscall
+
+function read(fd: i32, buf: buf<u8>, n: i64) -> i64:
+    return syscall(0, fd, buf, n)
+
+function sleep(seconds: i64):
+    syscall(35, seconds)  # nanosleep wrapper (simplified)

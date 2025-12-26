@@ -1,0 +1,9 @@
+import net
+
+server = net.http_server(8080)
+
+@server.route("/hello")
+function hello(req):
+    return "Hello Vinig"
+
+server.run()

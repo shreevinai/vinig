@@ -1,0 +1,8 @@
+function parse_file(filename):
+    stmts = []
+    for line in open(filename):
+        line = line.strip()
+        if line.startswith("print"):
+            val = line.replace("print", "").strip()
+            stmts.append({ "type": PRINT, "value": val })
+    return stmts

@@ -1,0 +1,9 @@
+module examples
+
+import vm
+import compiler
+
+function main():
+    print "Compiling and running simple bytecode..."
+    code = compiler.parse_file("examples/loops.vg")
+    vm.run(code)

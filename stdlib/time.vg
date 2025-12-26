@@ -1,0 +1,7 @@
+module time
+
+function now() -> i64:
+    return syscall(228)  # clock_gettime simplified
+
+function sleep(seconds: i64):
+    syscall(35, seconds)

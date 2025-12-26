@@ -1,0 +1,7 @@
+module examples
+
+import io
+
+function main():
+    name = io.read_line("Enter your favorite color: ")
+    io.print_line("Your favorite color is " + name)

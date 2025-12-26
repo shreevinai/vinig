@@ -1,0 +1,17 @@
+module examples
+
+import list
+import dict
+
+function main():
+    nums = [1, 2, 3, 4]
+    list.push(nums, 5)
+    print "Nums: " + str(nums)
+    val = list.pop(nums)
+    print "Popped: " + str(val)
+    print "Nums now: " + str(nums)
+
+    mydict = { "name": "Vinig", "type": "language" }
+    print "Keys: " + str(dict.keys(mydict))
+    print "Values: " + str(dict.values(mydict))
+    print "Has 'name'? " + str(dict.has(mydict, "name"))

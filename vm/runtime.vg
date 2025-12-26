@@ -1,0 +1,9 @@
+function execute(instr, mem):
+    if instr.type == PRINT:
+        print instr.value
+    elif instr.type == STORE:
+        set(mem, instr.name, instr.value)
+    elif instr.type == LOAD:
+        instr.value = get(mem, instr.name)
+    elif instr.type == ADD:
+        instr.value = instr.a + instr.b

@@ -1,0 +1,16 @@
+module string
+
+function concat(a: string, b: string) -> string:
+    return a + b
+
+function length(s: string) -> i64:
+    return len(s)
+
+function slice(s: string, start: i64, end: i64) -> string:
+    return s[start..end]
+
+function find(s: string, pattern: string) -> i64:
+    for i in 0..len(s) - len(pattern):
+        if s[i..i+len(pattern)] == pattern:
+            return i
+    return -1

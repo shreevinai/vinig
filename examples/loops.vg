@@ -1,0 +1,21 @@
+module examples
+
+function main():
+    print "For loop example:"
+    for i in 0..5:
+        print i
+
+    print "While loop example:"
+    j = 0
+    while j < 5:
+        print j
+        j = j + 1
+
+    print "If-elif-else example:"
+    x = 7
+    if x < 5:
+        print "x is small"
+    elif x == 7:
+        print "x is lucky seven"
+    else:
+        print "x is big"

@@ -1,0 +1,14 @@
+module io
+
+function print_line(msg: string):
+    print msg
+
+function read_line(prompt: string) -> string:
+    print prompt
+    return input()
+
+function println(msg: string):
+    print msg + "\n"
+
+function debug(var_name: string, value):
+    print "[DEBUG] " + var_name + " = " + str(value)

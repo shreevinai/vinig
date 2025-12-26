@@ -1,0 +1,29 @@
+module vm
+
+# VM registers
+r0 = 0
+r1 = 0
+r2 = 0
+sp = 0
+fp = 0
+pc = 0
+stack = []
+
+# VM instructions mapping
+function execute_bytecode(bytecode: list<i32>):
+    pc = 0
+    while pc < len(bytecode):
+        instr = bytecode[pc]
+        if instr == 1:  # ICONST
+            pc = pc + 1
+            stack.push(bytecode[pc])
+        elif instr == 2:  # ADD
+            b = stack.pop()
+            a = stack.pop()
+            stack.push(a + b)
+        elif instr == 3:  # PRINT
+            val = stack.pop()
+            print val
+        elif instr == 99:  # HALT
+            break
+        pc = pc + 1

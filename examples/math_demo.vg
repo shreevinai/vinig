@@ -1,0 +1,10 @@
+module examples
+
+import math
+
+function main():
+    print "abs(-10) = " + str(math.abs(-10))
+    print "max(4, 9) = " + str(math.max(4, 9))
+    print "min(4, 9) = " + str(math.min(4, 9))
+    print "pow(2, 5) = " + str(math.pow(2, 5))
+    print "sqrt(16) = " + str(math.sqrt(16))

@@ -1,0 +1,16 @@
+module examples
+
+import async
+
+@async
+function task1():
+    print "Task 1 running"
+
+@async
+function task2():
+    print "Task 2 running"
+
+function main():
+    print "Starting async tasks..."
+    async.run_all()
+    print "Async tasks finished"

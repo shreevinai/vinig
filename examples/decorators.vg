@@ -1,0 +1,14 @@
+module examples
+
+function log(func):
+    function wrapper(*args):
+        print "[LOG] Calling function " + func.__name__
+        return func(*args)
+    return wrapper
+
+@log
+function greet():
+    print "Hello from Vinig!"
+
+function main():
+    greet()

@@ -1,0 +1,14 @@
+module list
+
+function push(lst: list<T>, val: T):
+    lst.append(val)
+
+function pop(lst: list<T>) -> T:
+    if len(lst) > 0:
+        val = lst[len(lst)-1]
+        lst = lst[0..len(lst)-1]
+        return val
+    return none
+
+function len(lst: list<T>) -> i64:
+    return len(lst)

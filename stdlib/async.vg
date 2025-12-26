@@ -1,0 +1,19 @@
+module async
+
+tasks = []
+
+function async(func):
+    tasks.push(func)
+    return func
+
+function await(func):
+    # simple cooperative multitasking
+    for t in tasks:
+        if t == func:
+            return t()  # call function
+    return none
+
+function run_all():
+    for t in tasks:
+        t()
+    tasks = []  # clear after run

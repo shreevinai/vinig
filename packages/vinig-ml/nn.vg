@@ -1,0 +1,15 @@
+module ml.nn
+import ml.tensor
+
+type Linear:
+    weight: tensor.Tensor
+    bias: tensor.Tensor
+
+function Linear(in_f: i32, out_f: i32) -> Linear:
+    w = tensor.random(in_f, out_f)
+    b = tensor.random(1, out_f)
+    return Linear(w, b)
+
+function forward(self: Linear, x: tensor.Tensor) -> tensor.Tensor:
+    y = tensor.matmul(x, self.weight)
+    return y + self.bias

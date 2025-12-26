@@ -1,0 +1,18 @@
+module ml.tensor
+
+type Tensor:
+    handle: i64
+    shape: list<i32>
+    dtype: string
+
+function tensor(data) -> Tensor:
+    h = backend.create_tensor(data)
+    return Tensor(h, backend.shape(h), backend.dtype(h))
+
+function random(rows: i32, cols: i32) -> Tensor:
+    h = backend.random_tensor(rows, cols)
+    return Tensor(h, [rows, cols], "f32")
+
+function matmul(a: Tensor, b: Tensor) -> Tensor:
+    h = backend.matmul(a.handle, b.handle)
+    return Tensor(h, backend.shape(h), a.dtype)

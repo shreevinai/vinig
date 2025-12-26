@@ -1,0 +1,23 @@
+module compiler
+
+import io
+import vm
+
+function parse_file(path: string) -> list<i32>:
+    lines = []
+    f = io.read_file(path)
+    for line in f:
+        lines.push(line.strip())
+    return compile_lines(lines)
+
+function compile_lines(lines: list<string>) -> list<i32>:
+    bytecode = []
+    for line in lines:
+        if line.starts_with("print "):
+            expr = line[6..]
+            # For simplicity, push string constant
+            bytecode.push(1)  # ICONST
+            bytecode.push(expr.length)  # simplified
+            bytecode.push(3)  # PRINT
+    bytecode.push(99)  # HALT
+    return bytecode

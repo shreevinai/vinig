@@ -1,2 +1,8 @@
-function main:
-  print "Hello from Vinig!"
+module examples
+
+import io
+
+function main():
+    io.print_line("Hello, Vinig!")
+    name = io.read_line("Enter your name: ")
+    io.println("Welcome, " + name)

@@ -1,0 +1,16 @@
+import ui
+
+component Button(text):
+    return ui.button(
+        text=text,
+        on_click = fn():
+            print "Clicked!"
+    )
+
+component App():
+    return ui.column(
+        Button("Hello"),
+        Button("World")
+    )
+
+ui.render(App)

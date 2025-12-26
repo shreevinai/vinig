@@ -1,0 +1,10 @@
+module dict
+
+function keys(d: dict<K->V>) -> list<K>:
+    return d.keys()
+
+function values(d: dict<K->V>) -> list<V>:
+    return d.values()
+
+function has(d: dict<K->V>, key: K) -> bool:
+    return key in d

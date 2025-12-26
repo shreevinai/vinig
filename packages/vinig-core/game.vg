@@ -1,0 +1,10 @@
+import game
+
+entity Player:
+    position = vec2(0,0)
+
+    function update(dt):
+        position.x += 1 * dt
+
+game.run()
+

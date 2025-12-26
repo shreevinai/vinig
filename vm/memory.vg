@@ -1,0 +1,11 @@
+function create_memory():
+    mem = {}
+    return mem
+
+function set(mem, key, value):
+    mem[key] = value
+
+function get(mem, key):
+    if key in mem:
+        return mem[key]
+    return none

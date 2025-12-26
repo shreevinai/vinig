@@ -1,0 +1,12 @@
+module ml.optim
+
+type Adam:
+    params
+    lr: f32
+
+function Adam(params, lr=0.001) -> Adam:
+    return Adam(params, lr)
+
+function step(self: Adam):
+    for p in self.params:
+        backend.adam_step(p.handle, self.lr)

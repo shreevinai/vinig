@@ -1,0 +1,6 @@
+import data
+
+df = data.read_csv("users.csv")
+df = df.filter(fn row: row.age > 18)
+df = df.group_by("country").count()
+df.show()

@@ -1,0 +1,18 @@
+module examples
+
+class Animal:
+    function __init__(self, name):
+        self.name = name
+
+    function speak(self):
+        print self.name + " makes a sound"
+
+class Dog(Animal):
+    function speak(self):
+        print self.name + " says Woof!"
+
+function main():
+    a = Animal("Generic")
+    d = Dog("Rex")
+    a.speak()
+    d.speak()
